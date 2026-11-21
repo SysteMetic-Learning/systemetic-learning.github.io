@@ -1,0 +1,1489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#18385F">
+
+  <title>SysteMetic Learning | Professional Learning, Frameworks & Tools</title>
+
+  <meta name="description" content="SysteMetic Learning turns professional expertise into structured, practical learning resources across systems thinking, assessment, quality, operational excellence and applied AI.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #18385F;
+      --navy-dark: #102945;
+      --ink: #151515;
+      --muted: #5E646C;
+      --soft: #F4F6F8;
+      --paper: #FBFBFA;
+      --white: #FFFFFF;
+      --line: #E5E8EC;
+      --accent: #DCE7F2;
+      --radius: 18px;
+      --shadow: 0 12px 35px rgba(24, 56, 95, 0.07);
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Announcement banner */
+
+    .announcement {
+      display: block;
+      width: 100%;
+      padding: 11px 20px;
+      text-align: center;
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: background 0.2s ease;
+    }
+
+    .announcement:hover {
+      background: var(--navy-dark);
+    }
+
+    .announcement span {
+      opacity: 0.9;
+      margin-left: 5px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Header */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 251, 250, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .brand-tagline {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.15px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #414851;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .nav-links .nav-cta {
+      background: var(--navy);
+      color: white;
+      padding: 11px 20px;
+      border-radius: 999px;
+    }
+
+    .nav-links .nav-cta:hover {
+      background: var(--navy-dark);
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 100px 0 85px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(220,231,242,0.75), transparent 31%),
+        var(--paper);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 2px;
+      background: var(--navy);
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      color: var(--navy);
+      letter-spacing: -0.045em;
+      line-height: 1.16;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(42px, 5.4vw, 66px);
+      font-weight: 800;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      min-height: 49px;
+      padding: 13px 25px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--navy-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      color: var(--navy);
+      border: 1px solid #C8D2DD;
+      background: transparent;
+    }
+
+    .button-secondary:hover {
+      background: var(--accent);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-card {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      padding: 32px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 25px 65px rgba(24, 56, 95, 0.11);
+    }
+
+    .visual-label {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
+
+    .visual-title {
+      margin: 12px 0 25px;
+      font-family: "Manrope", sans-serif;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--navy);
+      letter-spacing: -1px;
+    }
+
+    .visual-step {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      color: #46515D;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 29px;
+      height: 29px;
+      flex-shrink: 0;
+      border-radius: 9px;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .visual-decoration {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 1px solid #B8C9DB;
+      border-radius: 50%;
+      top: 5px;
+      right: 0;
+      z-index: -1;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 83px 0;
+    }
+
+    .section-heading {
+      max-width: 740px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .section-kicker {
+      display: block;
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    /* Introduction */
+
+    .intro-section {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .intro-heading h2 {
+      font-size: 37px;
+    }
+
+    .intro-copy p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .intro-copy strong {
+      color: var(--navy);
+    }
+
+    /* Focus areas */
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .focus-card {
+      min-height: 205px;
+      padding: 27px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: all 0.25s ease;
+    }
+
+    .focus-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #C6D3E0;
+    }
+
+    .focus-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 22px;
+    }
+
+    .focus-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .focus-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* Learning collection */
+
+    .collection-section {
+      background: var(--soft);
+    }
+
+    .collection-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 36px;
+    }
+
+    .collection-top .section-heading {
+      margin-bottom: 0;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .collection-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 310px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: all 0.25s ease;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .collection-art {
+      min-height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #EAF0F6;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 33px;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .collection-art.alt {
+      background: #E9ECEF;
+    }
+
+    .collection-art.dark {
+      background: #18385F;
+      color: white;
+    }
+
+    .collection-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .collection-content h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .collection-content p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      margin-top: auto;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Formats */
+
+    .formats-section {
+      background: white;
+    }
+
+    .format-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 13px;
+    }
+
+    .format-item {
+      padding: 22px 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .format-item strong {
+      display: block;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .format-item span {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* Consulting */
+
+    .consulting-section {
+      background: var(--navy);
+      color: white;
+    }
+
+    .consulting-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .consulting-section .section-kicker {
+      color: #C8D9EA;
+    }
+
+    .consulting-section h2 {
+      color: white;
+      font-size: clamp(32px, 4vw, 44px);
+    }
+
+    .consulting-section p {
+      color: #D4DFEA;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-top: 18px;
+    }
+
+    .consulting-section .button-primary {
+      margin-top: 26px;
+      background: white;
+      color: var(--navy);
+    }
+
+    .consulting-section .button-primary:hover {
+      background: #EAF0F6;
+    }
+
+    .consulting-points {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .consulting-points div {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      color: #F1F5F9;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .consulting-points div:last-child {
+      border-bottom: 0;
+    }
+
+    .consulting-points span {
+      color: #AFC4D9;
+      margin-right: 12px;
+    }
+
+    /* About */
+
+    .about-section {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.35fr 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .about-mark {
+      width: 110px;
+      height: 110px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      border-radius: 24px;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .about-copy h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .about-copy strong {
+      color: var(--navy);
+    }
+
+    .about-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* Contact CTA */
+
+    .contact-section {
+      padding: 75px 0;
+      text-align: center;
+      background: #EDF2F7;
+    }
+
+    .contact-section h2 {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .contact-section p {
+      max-width: 650px;
+      margin: 18px auto 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #102945;
+      color: white;
+      padding: 48px 0 25px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      max-width: 390px;
+    }
+
+    .footer-brand h3 {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      color: #BFCBD7;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      align-content: start;
+    }
+
+    .footer-links a {
+      color: #E0E8F0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #AEBECD;
+      font-size: 11px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 30px;
+      }
+
+      .intro-grid,
+      .consulting-grid {
+        gap: 35px;
+      }
+
+      .focus-grid,
+      .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .format-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 34px, var(--max-width));
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 20px 25px 25px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 15px 25px rgba(0,0,0,0.06);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links .nav-cta {
+        text-align: center;
+        margin-top: 12px;
+        border: 0;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .brand-tagline {
+        font-size: 9px;
+      }
+
+      .announcement {
+        font-size: 11px;
+        line-height: 1.6;
+        padding: 10px 14px;
+      }
+
+      .hero {
+        padding: 70px 0 55px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+      }
+
+      .visual-card {
+        max-width: 100%;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .intro-grid,
+      .consulting-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .intro-heading h2,
+      .about-copy h2 {
+        font-size: 30px;
+      }
+
+      .focus-grid,
+      .collection-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .collection-top {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .format-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-main {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Click anywhere on this banner to open the enquiry page -->
+  <a class="announcement"
+     href="https://sahelibasu23.github.io/contact.html"
+     target="_blank"
+     rel="noopener">
+    🌍 Prices are displayed in INR (₹). For international orders, alternate currencies, or custom arrangements, click anywhere on this banner to access our enquiry page.
+    <span>Enquire here ↗</span>
+  </a>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav">
+
+      <a class="brand" href="#home" aria-label="SysteMetic Learning home">
+        <span class="brand-name">SysteMetic Learning</span>
+        <span class="brand-tagline">Structured knowledge. Practical capability.</span>
+      </a>
+
+      <button class="menu-toggle"
+              id="menuToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#learning">Learning Materials</a>
+        <a href="#approach">Our Approach</a>
+        <a href="https://payhip.com/SysteMeticLearning/consulting-advisory-engagements"
+           target="_blank" rel="noopener">Consulting & Strategy</a>
+        <a class="nav-cta"
+           href="https://sahelibasu23.github.io/contact.html"
+           target="_blank" rel="noopener">Enquiries ↗</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="eyebrow">A professional learning ecosystem</span>
+
+          <h1>Turn professional knowledge into structured capability.</h1>
+
+          <p class="hero-description">
+            SysteMetic Learning brings together systems thinking,
+            assessment and quality practices, operational excellence,
+            applied AI, and decision intelligence into practical
+            learning resources designed for real-world application.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary"
+               href="https://payhip.com/SysteMeticLearning/collection/all"
+               target="_blank" rel="noopener">
+              Explore Learning Materials →
+            </a>
+
+            <a class="button button-secondary"
+               href="#approach">
+              Discover Our Approach
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-decoration"></div>
+
+          <div class="visual-card">
+            <span class="visual-label">The learning architecture</span>
+
+            <div class="visual-title">
+              From understanding to application.
+            </div>
+
+            <div class="visual-step">
+              <span class="step-number">01</span>
+              Understand the foundations
+            </div>
+
+            <div class="visual-step">
+              <span class="step-number">02</span>
+              Build structured knowledge
+            </div>
+
+            <div class="visual-step">
+              <span class="step-number">03</span>
+              Apply practical methods
+            </div>
+
+            <div class="visual-step">
+              <span class="step-number">04</span>
+              Improve through evidence
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro-section">
+      <div class="container intro-grid">
+
+        <div class="intro-heading">
+          <span class="section-kicker">What is SysteMetic Learning?</span>
+          <h2>Learning designed as a connected system.</h2>
+        </div>
+
+        <div class="intro-copy">
+          <p>
+            Professional knowledge is most valuable when people can
+            understand it, connect it to their work, and apply it
+            with confidence.
+          </p>
+
+          <p>
+            <strong>SysteMetic Learning</strong> is an independent
+            curriculum and learning architecture initiative that
+            turns professional expertise into structured, usable
+            learning resources.
+          </p>
+
+          <p>
+            Rather than isolated content, it is built as a growing
+            ecosystem of learning programs, field guides, frameworks,
+            workbooks, and practical tools — designed to help
+            professionals move from understanding a concept to
+            applying it in real-world work.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Focus areas -->
+    <section id="approach">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">Areas of focus</span>
+          <h2>One connected discipline. Multiple practical applications.</h2>
+          <p>
+            The learning ecosystem connects complementary areas
+            of professional practice rather than treating them
+            as unrelated subjects.
+          </p>
+        </div>
+
+        <div class="focus-grid">
+
+          <article class="focus-card">
+            <div class="focus-icon">⌘</div>
+            <h3>Systems Thinking</h3>
+            <p>
+              Understand relationships, dependencies, structures,
+              and the wider context behind complex work.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-icon">◎</div>
+            <h3>Learning & Curriculum Design</h3>
+            <p>
+              Structure knowledge into meaningful learning
+              experiences, programs, and capability pathways.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-icon">◈</div>
+            <h3>Assessment & Measurement</h3>
+            <p>
+              Translate competencies into observable evidence,
+              credible assessments, and useful measurement.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-icon">✓</div>
+            <h3>Quality & Governance</h3>
+            <p>
+              Apply quality frameworks, accountable workflows,
+              review practices, and continuous improvement.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-icon">↗</div>
+            <h3>Operational Excellence</h3>
+            <p>
+              Improve processes, decision pathways, operational
+              visibility, and the way work gets done.
+            </p>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-icon">✳</div>
+            <h3>Applied AI & Decision Intelligence</h3>
+            <p>
+              Explore practical AI applications, responsible
+              automation, analytical methods, and decision support.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning materials -->
+    <section class="collection-section" id="learning">
+      <div class="container">
+
+        <div class="collection-top">
+          <div class="section-heading">
+            <span class="section-kicker">Explore the collection</span>
+            <h2>Learning resources built for practical use.</h2>
+            <p>
+              Explore structured materials designed to support
+              professional understanding, skill development,
+              and practical application.
+            </p>
+          </div>
+
+          <a class="button button-primary"
+             href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            View All Materials →
+          </a>
+        </div>
+
+        <div class="collection-grid">
+
+          <a class="collection-card"
+             href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            <div class="collection-art">01</div>
+            <div class="collection-content">
+              <h3>Orientation & Foundations</h3>
+              <p>
+                Build familiarity with essential concepts,
+                terminology, principles, and ways of thinking
+                before progressing into deeper applications.
+              </p>
+              <span class="card-link">Explore the collection →</span>
+            </div>
+          </a>
+
+          <a class="collection-card"
+             href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            <div class="collection-art alt">02</div>
+            <div class="collection-content">
+              <h3>Professional Field Guides</h3>
+              <p>
+                Explore structured explanations, practical
+                reference material, methods, and frameworks
+                for professional practice.
+              </p>
+              <span class="card-link">Explore the collection →</span>
+            </div>
+          </a>
+
+          <a class="collection-card"
+             href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            <div class="collection-art dark">03</div>
+            <div class="collection-content">
+              <h3>Professional Essentials</h3>
+              <p>
+                Develop essential knowledge and practical
+                approaches that support consistent,
+                confident professional work.
+              </p>
+              <span class="card-link">Explore the collection →</span>
+            </div>
+          </a>
+
+          <a class="collection-card"
+             href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            <div class="collection-art dark">04</div>
+            <div class="collection-content">
+              <h3>Structured Learning Programs</h3>
+              <p>
+                Follow more comprehensive learning pathways
+                that connect concepts, guided practice,
+                and application.
+              </p>
+              <span class="card-link">Explore the collection →</span>
+            </div>
+          </a>
+
+          <a class="collection-card"
+             href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            <div class="collection-art alt">05</div>
+            <div class="collection-content">
+              <h3>Toolkits & Practical Resources</h3>
+              <p>
+                Use structured tools, templates, workbooks,
+                and supporting resources to put knowledge
+                into practice.
+              </p>
+              <span class="card-link">Explore the collection →</span>
+            </div>
+          </a>
+
+          <a class="collection-card"
+             href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            <div class="collection-art">↗</div>
+            <div class="collection-content">
+              <h3>Complete Learning Collection</h3>
+              <p>
+                Browse all currently available learning
+                materials and discover resources suited
+                to your professional development needs.
+              </p>
+              <span class="card-link">Browse all materials →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning formats -->
+    <section class="formats-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">How knowledge is delivered</span>
+          <h2>Different formats. A consistent design philosophy.</h2>
+          <p>
+            Resources are developed in formats that support
+            different learning needs, levels of depth,
+            and practical contexts.
+          </p>
+        </div>
+
+        <div class="format-list">
+          <div class="format-item">
+            <strong>Field Guides</strong>
+            <span>Structured professional reference</span>
+          </div>
+
+          <div class="format-item">
+            <strong>Frameworks</strong>
+            <span>Models, methods, and systems</span>
+          </div>
+
+          <div class="format-item">
+            <strong>Workbooks</strong>
+            <span>Guided practice and application</span>
+          </div>
+
+          <div class="format-item">
+            <strong>Learning Programs</strong>
+            <span>Connected learning pathways</span>
+          </div>
+
+          <div class="format-item">
+            <strong>Toolkits</strong>
+            <span>Practical tools and templates</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Consulting -->
+    <section class="consulting-section">
+      <div class="container consulting-grid">
+
+        <div>
+          <span class="section-kicker">Beyond learning materials</span>
+
+          <h2>Consulting & Strategy for more complex needs.</h2>
+
+          <p>
+            Some challenges require more than a standalone
+            learning resource. They call for structured
+            analysis, thoughtful design, and solutions
+            aligned with the wider operating context.
+          </p>
+
+          <p>
+            Explore consulting and advisory engagements
+            across learning architecture, assessment,
+            quality systems, operational improvement,
+            and applied AI workflows.
+          </p>
+
+          <a class="button button-primary"
+             href="https://payhip.com/SysteMeticLearning/consulting-advisory-engagements"
+             target="_blank" rel="noopener">
+            Explore Consulting & Strategy →
+          </a>
+        </div>
+
+        <div class="consulting-points">
+          <div><span>01</span> Learning & curriculum architecture</div>
+          <div><span>02</span> Assessment design and quality</div>
+          <div><span>03</span> Operational systems and improvement</div>
+          <div><span>04</span> Applied AI and workflow strategy</div>
+          <div><span>05</span> Research, analysis and decision support</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-mark">SL</div>
+
+        <div class="about-copy">
+          <span class="section-kicker">About the initiative</span>
+
+          <h2>Designed and developed by Saheli Basu.</h2>
+
+          <p>
+            SysteMetic Learning is an independent curriculum
+            and learning architecture initiative developed
+            by <strong>Saheli Basu, Curriculum Architect
+            & Operations Designer.</strong>
+          </p>
+
+          <p>
+            It brings together experience across learning
+            and assessment design, quality practices,
+            operational excellence, systems thinking,
+            and applied AI into one connected discipline.
+          </p>
+
+          <p>
+            The underlying principle is straightforward:
+            learning should be designed with clarity of
+            purpose, deliberate structure, and attention
+            to how each part supports the whole.
+          </p>
+
+          <p>
+            The result is a growing ecosystem of resources
+            intended to make professional knowledge
+            understandable, usable, and transferable
+            into real-world work.
+          </p>
+
+          <a class="about-link"
+             href="https://www.linkedin.com/"
+             target="_blank" rel="noopener">
+            Professional background ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+      <div class="container">
+
+        <span class="section-kicker">Questions, enquiries & opportunities</span>
+
+        <h2>Looking for a particular resource or a tailored engagement?</h2>
+
+        <p>
+          For international orders, alternate currencies,
+          custom arrangements, or enquiries about consulting
+          and strategy, use the enquiry page.
+        </p>
+
+        <a class="button button-primary"
+           href="https://sahelibasu23.github.io/contact.html"
+           target="_blank" rel="noopener">
+          Visit the Enquiry Page →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+          <h3>SysteMetic Learning</h3>
+          <p>
+            Structured knowledge. Practical capability.
+            An independent learning ecosystem connecting
+            systems thinking, professional practice,
+            quality, and applied technology.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+
+          <a href="https://payhip.com/SysteMeticLearning/collection/all"
+             target="_blank" rel="noopener">
+            Learning Materials
+          </a>
+
+          <a href="https://payhip.com/SysteMeticLearning/consulting-advisory-engagements"
+             target="_blank" rel="noopener">
+            Consulting & Strategy
+          </a>
+
+          <a href="https://sahelibasu23.github.io/contact.html"
+             target="_blank" rel="noopener">
+            Contact
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> SysteMetic Learning. All rights reserved.</span>
+        <span>Designed with clarity, structure, and purpose.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.innerHTML = isOpen ? "&times;" : "☰";
+    });
+
+    // Close mobile menu after selecting a navigation link
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = "☰";
+      });
+    });
+
+    // Automatically update copyright year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
