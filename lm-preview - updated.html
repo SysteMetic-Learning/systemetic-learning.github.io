@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#18385F">
+
+  <title>Learning Materials | SysteMetic Learning</title>
+
+  <meta name="description" content="Explore professional learning resources, practical guides, frameworks and toolkits from SysteMetic Learning.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #18385F;
+      --navy-dark: #102945;
+      --ink: #151515;
+      --muted: #5E646C;
+      --paper: #FBFBFA;
+      --white: #FFFFFF;
+      --soft: #F4F6F8;
+      --line: #E5E8EC;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: auto;
+    }
+
+    /* International banner */
+
+    .announcement {
+      display: block;
+      padding: 11px 18px;
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.6;
+      transition: background .2s;
+    }
+
+    .announcement:hover {
+      background: var(--navy-dark);
+    }
+
+    .announcement span {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251,251,250,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 3px 12px rgba(24,56,95,.09);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .brand-tagline {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .nav-links a {
+      color: #414851;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .nav-links .active {
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .nav-links .nav-cta {
+      background: var(--navy);
+      color: white;
+      padding: 11px 20px;
+      border-radius: 999px;
+    }
+
+    .nav-cta:hover {
+      background: var(--navy-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      color: var(--navy);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* Collection introduction */
+
+    .collection-hero {
+      padding: 75px 0 55px;
+      background:
+        radial-gradient(circle at 85% 20%, #EAF0F6, transparent 32%),
+        var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--navy);
+    }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      color: var(--navy);
+      letter-spacing: -.04em;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 55px);
+      font-weight: 800;
+      max-width: 750px;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      margin-top: 19px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-note span {
+      padding: 7px 13px;
+      border: 1px solid #D9E1E9;
+      border-radius: 999px;
+      background: rgba(255,255,255,.65);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Collection controls */
+
+    .collection {
+      padding: 55px 0 85px;
+    }
+
+    .collection-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .collection-heading h2 {
+      font-size: 27px;
+    }
+
+    .collection-count {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* Product grid */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 27px 22px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(24,56,95,.09);
+    }
+
+    .product-image {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      background: #F0F2F5;
+      aspect-ratio: 1 / 1;
+    }
+
+    .product-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.035);
+    }
+
+    .product-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 21px;
+    }
+
+    .product-content h3 {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.4;
+      min-height: 48px;
+    }
+
+    .product-price {
+      margin-top: 13px;
+      color: var(--navy);
+      font-family: "Manrope", sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .product-price.free {
+      color: #36745A;
+    }
+
+    .product-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 19px;
+      min-height: 43px;
+      padding: 10px 17px;
+      background: var(--navy);
+      color: white;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      transition: background .2s, transform .2s;
+    }
+
+    .product-action:hover {
+      background: var(--navy-dark);
+      transform: translateY(-1px);
+    }
+
+    /* International note */
+
+    .currency-note {
+      margin-top: 40px;
+      padding: 20px 24px;
+      background: #F0F4F8;
+      border: 1px solid #DDE6EF;
+      border-radius: 14px;
+      color: #485564;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .currency-note strong {
+      color: var(--navy);
+    }
+
+    .currency-note a {
+      color: var(--navy);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Advisory section */
+
+    .advisory {
+      padding: 65px 0;
+      background: var(--navy);
+      color: white;
+    }
+
+    .advisory-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .advisory h2 {
+      color: white;
+      font-size: 30px;
+    }
+
+    .advisory p {
+      max-width: 680px;
+      margin-top: 12px;
+      color: #D4DFEA;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .advisory-button {
+      flex-shrink: 0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: white;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .advisory-button:hover {
+      background: #EAF0F6;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 43px 0 22px;
+      background: #102945;
+      color: white;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand {
+      max-width: 390px;
+    }
+
+    .footer-brand h3 {
+      color: white;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      color: #BFCBD7;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: start;
+      gap: 23px;
+    }
+
+    .footer-links a {
+      color: #E0E8F0;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 19px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      color: #AEBECD;
+      font-size: 11px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 34px, var(--max-width));
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-tagline {
+        font-size: 8px;
+      }
+
+      .brand img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 17px 25px 23px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 15px 25px rgba(0,0,0,.06);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links .nav-cta {
+        text-align: center;
+        margin-top: 12px;
+      }
+
+      .collection-hero {
+        padding: 55px 0 40px;
+      }
+
+      .collection {
+        padding: 40px 0 60px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .product-content {
+        padding: 13px;
+      }
+
+      .product-content h3 {
+        font-size: 13px;
+        min-height: 54px;
+      }
+
+      .product-price {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      .product-action {
+        font-size: 10px;
+        padding: 9px 8px;
+        min-height: 39px;
+      }
+
+      .collection-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .advisory-inner {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .advisory h2 {
+        font-size: 26px;
+      }
+
+      .footer-main {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-content h3 {
+        font-size: 16px;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Entire banner is clickable -->
+  <a class="announcement"
+     href="https://sahelibasu23.github.io/contact.html"
+     target="_blank"
+     rel="noopener">
+    🌍 Prices are displayed in INR (₹). For international orders, alternate currencies, or custom arrangements, click anywhere on this banner to access our enquiry page.
+    <span>Enquire here ↗</span>
+  </a>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+
+      <a class="brand" href="index.html">
+        <img src="assets/SysteMetic-icon.png"
+             alt="SysteMetic Learning logo">
+
+        <span class="brand-text">
+          <span class="brand-name">SysteMetic Learning</span>
+          <span class="brand-tagline">Structured knowledge. Practical capability.</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle"
+              id="menuToggle"
+              aria-label="Open navigation menu"
+              aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="learning-materials.html" class="active">Learning Materials</a>
+
+        <a href="https://payhip.com/SysteMeticLearning/consulting-advisory-engagements"
+           target="_blank" rel="noopener">
+          Consulting & Strategy
+        </a>
+
+        <a class="nav-cta"
+           href="https://sahelibasu23.github.io/contact.html"
+           target="_blank" rel="noopener">
+          Enquiries ↗
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Collection introduction -->
+    <section class="collection-hero">
+      <div class="container">
+
+        <span class="eyebrow">The SysteMetic Learning collection</span>
+
+        <h1>Learning Materials</h1>
+
+        <p class="hero-description">
+          Explore structured learning resources designed to
+          translate professional knowledge into practical
+          understanding and application. Browse field guides,
+          frameworks, workbooks, and focused learning resources
+          across professional practice, inquiry, feedback,
+          prompt design, and operational documentation.
+        </p>
+
+        <div class="hero-note">
+          <span>Digital learning resources</span>
+          <span>Practical application</span>
+          <span>Prices in INR (₹)</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Actual Payhip collection -->
+    <section class="collection">
+      <div class="container">
+
+        <div class="collection-heading">
+          <div>
+            <span class="eyebrow">Browse the resources</span>
+            <h2>Explore the collection</h2>
+          </div>
+
+          <span class="collection-count">
+            15 learning resources
+          </span>
+        </div>
+
+        <div class="product-grid">
+
+          <!-- 1 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/7Nmhp"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k2fa35qd1f811shb1ru81si11rtlc.png"
+                alt="SysteMetic Learning — An Introduction"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>SysteMetic Learning — An Introduction</h3>
+              <div class="product-price free">₹0.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/7Nmhp"
+                 target="_blank" rel="noopener">
+                Get This Resource →
+              </a>
+            </div>
+          </article>
+
+          <!-- 2.1 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/14FXm"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k2f8155qmp87s31q821ueai9b1a.png"
+                alt="New learning experiences"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>New learning experiences</h3>
+              <div class="product-price free">Free</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/14FXm"
+                 target="_blank" rel="noopener">
+                Explore Resource →
+              </a>
+            </div>
+          </article>
+
+          <!-- 2.2 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/2XWec"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k2fa4crldsf1opq16ob1agcreec.png"
+                alt="SysteMetic Learning — Upcoming Resources"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>SysteMetic Learning — Upcoming Resources</h3>
+              <div class="product-price free">₹0.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/2XWec"
+                 target="_blank" rel="noopener">
+                Get This Resource →
+              </a>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/vACL0"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k2f54lfi171h1u281e101qa21cof7.png"
+                alt="Prompt Design Foundations"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Prompt Design Foundations</h3>
+              <div class="product-price">₹1,500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/vACL0"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/XGHe0"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k2f3huro1efg1o8d1fhgts314re15.png"
+                alt="Writing Better Professional Prompts"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Writing Better Professional Prompts</h3>
+              <div class="product-price">₹1,000.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/XGHe0"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/POUAV"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k2f4edqv18in1ja38e51g531nbk1a.png"
+                alt="Build a prompt with SCOPE"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Build a prompt with SCOPE</h3>
+              <div class="product-price">₹500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/POUAV"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/DysNI"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k36objr615lv1ftd5n91q4feuf7.png"
+                alt="Inquiry Foundations"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Inquiry Foundations</h3>
+              <div class="product-price">₹1,500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/DysNI"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/9BhGE"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k36opm3778f1hl5hhd3ti17ds15.png"
+                alt="Asking Better Questions"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Asking Better Questions</h3>
+              <div class="product-price">₹1,000.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/9BhGE"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/RJvSO"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k36oj3utjr0oqdc6ohhchn715.png"
+                alt="Plan a better question sequence"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Plan a better question sequence</h3>
+              <div class="product-price">₹500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/RJvSO"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/R9amo"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k507ilkp1odt5mofo7tps1sdp7.png"
+                alt="Feedback Foundations"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Feedback Foundations</h3>
+              <div class="product-price">₹1,500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/R9amo"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/v0Upr"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k507brvj1fin1mqsplf15341msv1a.png"
+                alt="Giving Actionable Feedback"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Giving Actionable Feedback</h3>
+              <div class="product-price">₹1,000.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/v0Upr"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/1nP2u"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k507fl57q0k1eul1qc81taq1tj1a.png"
+                alt="Plan feedback that can be used"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Plan feedback that can be used</h3>
+              <div class="product-price">₹500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/1nP2u"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/0DlrE"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k508amgd1fav8kjnvf1ub2nfa7.png"
+                alt="Meeting Documentation Foundations"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Meeting Documentation Foundations</h3>
+              <div class="product-price">₹1,500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/0DlrE"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 13 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/VwRy1"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k5081d5h18lq17d83mq13ss55b15.png"
+                alt="Meeting Notes That Drive Action"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Meeting Notes That Drive Action</h3>
+              <div class="product-price">₹1,000.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/VwRy1"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+          <!-- 14 -->
+          <article class="product-card">
+            <a class="product-image"
+               href="https://payhip.com/b/WzVjK"
+               target="_blank" rel="noopener">
+              <img
+                src="https://pe56d.s3.amazonaws.com/o_1k5084aaa2ar2lf1b6v154i17mj15.png"
+                alt="Build an Action-Oriented Meeting Record"
+                loading="lazy">
+            </a>
+
+            <div class="product-content">
+              <h3>Build an Action-Oriented Meeting Record</h3>
+              <div class="product-price">₹500.00</div>
+
+              <a class="product-action"
+                 href="https://payhip.com/b/WzVjK"
+                 target="_blank" rel="noopener">
+                View Details & Buy →
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Currency information -->
+        <div class="currency-note">
+          <strong>International customers:</strong>
+          All displayed prices are in Indian Rupees (INR).
+          For international orders, alternate currencies,
+          or custom arrangements, please
+          <a href="https://sahelibasu23.github.io/contact.html"
+             target="_blank" rel="noopener">
+            visit the enquiry page
+          </a>.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Consulting and advisory -->
+    <section class="advisory">
+      <div class="container advisory-inner">
+
+        <div>
+          <h2>Looking for a tailored engagement?</h2>
+
+          <p>
+            For consulting, advisory and strategy-related
+            requirements, explore the dedicated professional
+            services offering.
+          </p>
+        </div>
+
+        <a class="advisory-button"
+           href="https://payhip.com/SysteMeticLearning/consulting-advisory-engagements"
+           target="_blank" rel="noopener">
+          Consulting & Strategy →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+          <h3>SysteMetic Learning</h3>
+
+          <p>
+            Structured knowledge. Practical capability.
+            An independent learning ecosystem connecting
+            systems thinking, professional practice,
+            quality, and applied technology.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+
+          <a href="index.html#about">About</a>
+
+          <a href="learning-materials.html">
+            Learning Materials
+          </a>
+
+          <a href="https://payhip.com/SysteMeticLearning/consulting-advisory-engagements"
+             target="_blank" rel="noopener">
+            Consulting & Strategy
+          </a>
+
+          <a href="https://sahelibasu23.github.io/contact.html"
+             target="_blank" rel="noopener">
+            Contact
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © <span id="year"></span> SysteMetic Learning. All rights reserved.
+        </span>
+
+        <span>Designed with clarity, structure, and purpose.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.innerHTML = isOpen ? "&times;" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
